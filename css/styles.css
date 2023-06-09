@@ -31,5 +31,37 @@ section {
 }
 
 .diagonal {
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  content: '';
   background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  position: absolute;
+  inset: 0;
+  transform: skewY(-5deg);
+  z-index: -1;
+}
+
+.spikes {
+  position: relative;
+  background: linear-gradient(to right, #fdc830, #f37335);
+}
+
+.spikes::before,
+.spikes::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: purple;
+}
+
+.spikes::before {
+  top: 0;
+}
+
+.spikes::after {
+  bottom: 0;
 }
